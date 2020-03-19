@@ -1,0 +1,11 @@
+<div class="form-group col-md-12">
+    {!! Form::label('$NAME$', '$TITLE$') !!}
+    {!! Form::hidden('$NAME$','') !!}
+    <div class="checkbox">
+        <label>
+            {!! Form::checkbox('$NAME$', 1, $STATE$) !!}
+            $TITLE$
+        </label>
+    </div>
+    $HELPER$
+</div>

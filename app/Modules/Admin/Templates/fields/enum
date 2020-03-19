@@ -1,0 +1,5 @@
+<div class="form-group col-md-12">
+    {!! Form::label('$$NAME$', '$TITLE$') !!}
+    {!! Form::select('$NAME$', $NAME$, old('$LABEL$'), array('class'=>'form-control')) !!}
+    $HELPER$
+</div>

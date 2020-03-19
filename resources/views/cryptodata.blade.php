@@ -1,0 +1,1 @@
+[BTC/USD] - [1] - [BAT] - [SELL]

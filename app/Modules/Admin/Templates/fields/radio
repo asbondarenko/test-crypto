@@ -1,0 +1,16 @@
+<div class="form-group col-md-12">
+    {!! Form::label('$NAME$', '$TITLE$') !!}
+    @foreach (array_combine(explode(',', trim('$VALUES$')), explode(',', trim('$LABELS$'))) as $value => $title)
+        @php $checked = false @endphp
+        @if ($value == $$SINGULAR$->$NAME$)
+            @php $checked = true @endphp
+        @endif
+        <div class="radio">
+            <label>
+                {!! Form::radio('$NAME$', $value, $checked) !!}
+                {{ $title }}
+            </label>
+        </div>
+    @endforeach
+    $HELPER$
+</div>

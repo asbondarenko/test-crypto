@@ -1,0 +1,5 @@
+<div class="form-group col-md-12">
+    {!! Form::label('$NAME$', '$TITLE$') !!}
+    {!! Form::text('$$NAME$', old('$NAME$'), array('class'=>'form-control datetimepicker')) !!}
+    $HELPER$
+</div>

@@ -1,0 +1,58 @@
+<?php
+
+namespace App\Modules\Admin\Controllers\Auth;
+
+use App\Modules\Admin\Controllers\AdminController;
+use App\Modules\Admin\Services\RedirectService;
+use Illuminate\Foundation\Auth\ResetsPasswords;
+
+class ResetPasswordController extends AdminController
+{
+    /*
+    |--------------------------------------------------------------------------
+    | Password Reset Controller
+    |--------------------------------------------------------------------------
+    |
+    | This controller is responsible for handling password reset requests
+    | and uses a simple trait to include this behavior. You're free to
+    | explore this trait and override any methods you wish to tweak.
+    |
+    */
+
+    use ResetsPasswords;
+
+    /**
+     * Where to redirect users after resetting their password.
+     *
+     * @var string
+     */
+    protected $redirectTo = '/home';
+
+    protected $redirectService;
+
+    /**
+     * Create a new controller instance.
+     *
+     * @param RedirectService $redirectService
+     *
+     * @return void
+     */
+    public function __construct(RedirectService $redirectService)
+    {
+        $this->middleware('guest');
+
+        $this->redirectService = $redirectService;
+    }
+
+    /**
+     * Get redirect
+     *
+     * @return string
+     */
+    protected function redirectTo()
+    {
+        $redirectRoute = $this->redirectService->getHomeRedirectRoute();
+
+        return is_null($redirectRoute) ? $this->redirectTo : route($redirectRoute);
+    }
+}

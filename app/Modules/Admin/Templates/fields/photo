@@ -1,0 +1,7 @@
+<div class="form-group col-md-12">
+    {!! Form::label('$NAME$', '$TITLE$') !!}
+    {!! Form::file('$NAME$') !!}
+    {!! Form::hidden('$NAME$_w', $WIDTH$) !!}
+    {!! Form::hidden('$NAME$_h', $HEIGHT$) !!}
+    $HELPER$
+</div>
